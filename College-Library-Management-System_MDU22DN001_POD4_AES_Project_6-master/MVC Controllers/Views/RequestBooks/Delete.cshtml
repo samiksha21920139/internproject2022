@@ -1,0 +1,87 @@
+﻿@model College_library_management_system.Models.RequestBook
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <style>
+        body {
+            text-align: center;
+            margin:10%;
+            background-image: url("https://wallpapercave.com/wp/wp2213285.jpg");
+            font-size: x-large;
+        }
+        dt {
+            font-size: large;
+            font-weight: bolder;
+            color: darkred;
+        }
+        .btn {
+            background-color: darkred;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Are you sure you want to reject this request?</h3>
+    <div>
+      
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RequestId)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BookTitle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BookId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BookId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UserID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UserID)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.BorrowedDate)
+            </dd>
+
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

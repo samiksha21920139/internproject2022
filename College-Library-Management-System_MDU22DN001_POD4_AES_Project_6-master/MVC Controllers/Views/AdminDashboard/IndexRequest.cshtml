@@ -1,0 +1,112 @@
+﻿@model IEnumerable<College_library_management_system.Models.RequestBook>
+
+@{
+    ViewBag.Title = "IndexRequest";
+}
+
+<style>
+    table, tr, td {
+        background-color: lightgrey;
+        height: 50px;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    body {
+        background-image: url("https://th.bing.com/th/id/R.efd35a6d841953060a0c4b10f763f08c?rik=CJ9NMgFci1tVmg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2ff%2f8%2f4%2f888661-beautiful-library-background-images-1920x1080-iphone.jpg&ehk=4sDpXGMv3dZdR6sK7WCIqhrxrVTpmPIyg8Nr3dm9nl0%3d&risl=&pid=ImgRaw&r=0");
+    }
+
+    h2 {
+        color: white;
+        font-weight: bolder;
+    }
+</style>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar">Logout</span>
+                </button>
+                <h3 style="color:white;">Library Dashboard</h3>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="padding-top:10px;">
+                    <li></li>
+                    <li style="color:burlywood;">@Html.ActionLink("Add Books", "CreateBooks", "AdminDashboard")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("View Users", "IndexUser", "Users")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("Home", "Index", "AdminDashboard")</li>
+
+
+                    <li> </li>
+                    <li> </li>
+                    <li>
+                    </li>
+                    <li>@Html.ActionLink("Logout", "Logout", "Logout")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <h2>Requests</h2>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </th>
+
+            <th>Accept Request</th>
+            <th>Reject Request</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowedDate)
+                </td>
+
+                <td>
+
+                    @Html.ActionLink("Issue Book", "Edit", new { id = item.RequestId })
+
+                </td>
+                <td>
+                    @Html.ActionLink("Reject", "Delete", new { id = item.RequestId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>

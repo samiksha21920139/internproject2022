@@ -1,0 +1,202 @@
+﻿@model College_library_management_system.Models.AvailableBook
+
+@{
+    ViewBag.Title = "CreateBooks";
+}
+<style>
+    body {
+        background-image: url("https://previews.123rf.com/images/golfmhee/golfmhee1903/golfmhee190300051/120612313-abstract-turquoise-bright-wood-texture-over-blue-light-natural-color-background-art-plain-simple-pee.jpg");
+        font-family: source-sans-pro, sans-serif;
+    }
+
+    h1 {
+        margin-left: auto;
+        margin-top: 50px;
+        text-align: center;
+        font-weight: 100;
+        font-size: 2.8em;
+        color: #FF0000;
+        padding:100px 100px 100px 100px;}
+
+    div {
+        position: fixed;
+        margin: auto;
+    }
+
+    .formStyle {
+        background-color:lightgrey;
+        padding: 30px;  
+        width: 400px;
+        margin-bottom: 20px;
+        border-bottom-width: 3px;
+        border-bottom-style: solid;
+        border-bottom-color: lightgrey;
+        border-top-style: none;
+        border-right-style: none;
+        border-left-style: none;
+        font-size: 1em;
+        font-weight: 100;
+        color: black;
+        border-radius:50px;
+    }
+   
+    .formButton {
+        display: block;
+        margin: 0 auto;
+        width:100px;
+        height:50px;
+        border-radius: 30px;
+        color: black;
+        font-size: 15px;
+        font-weight:bold;
+        cursor: pointer;
+        background-color:lightgrey;
+    }
+    .formButton1{
+        color:white;
+        font-size:large;
+        font-weight:bold;
+    }
+    .col-md-10{
+        padding-left:25px;
+        padding-bottom:50px;
+       
+    }
+ 
+        .formButton:hover {
+            background-color:black;
+            color: #ffffff;
+        }
+
+        .formButton:active {
+            position: relative;
+            top: 3px;
+        }
+        h2{
+            color:white;
+            border:3px ;
+            background-color:black;
+       
+    }
+</style>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <h3 style="color:white;">Library Dashboard</h3>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="padding-top:10px;">
+                    <li></li>
+                    <li style="color:burlywood;">@Html.ActionLink("Home", "Index")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("View Users", "IndexUser", "Users")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("View Requests", "IndexRequest", "RequestBooks")</li>
+
+
+                    <li> </li>
+                    <li> </li>
+                    <li>
+                    </li>
+                    <li>@Html.ActionLink("Logout", "Login", "Login")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <h2>Add a new Book</h2>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <form class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="formStyle">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BookId, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BookId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.BookId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="formStyle">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Category, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="formStyle">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BookTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.BookTitle, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.BookTitle, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="formStyle">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="formStyle">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Publisher, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Publisher, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Publisher, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+            </div>
+            <div class="formStyle">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Count, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Count, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Count, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="formButton" id="btn-alert" />
+                </div>
+            </div>
+        </form>
+    }
+
+    <div class="form-group">
+        <div class="formButton1">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </div>
+ 
+        @if (ViewBag.Message != null)
+        {
+            <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+                window.location = "Index";
+            };
+            </script>
+        }
+    
+</body>
+
+
+

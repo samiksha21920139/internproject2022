@@ -1,0 +1,128 @@
+﻿@model IEnumerable<College_library_management_system.Models.UserTable>
+
+@{
+    ViewBag.Title = "IndexUser";
+}
+<style>
+   
+    .btn-primary {
+        background-color: black;
+        display: flex;
+        color:white;
+    }
+
+    .btn:hover {
+        background-color: white;
+    }
+
+    .btn-success {
+        background-color: black;
+        color:white;
+    }
+
+        .btn-success:hover {
+            background-color: wheat;
+        }
+
+    
+    table, tr, td {
+        background-color: lightgrey;
+        height: 50px;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    body {
+        background-image: url("https://warontherocks.com/wp-content/uploads/2018/03/glaser.jpg");
+    }
+</style>
+    
+   
+
+<body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    
+                    <h3 style="color:white;">Library Dashboard</h3>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav" style="padding-top:10px;">
+                        <li></li>
+                        <li style="color:burlywood;">@Html.ActionLink("Add Books", "CreateBooks", "AdminDashboard")</li>
+                        <li style="color:burlywood;">@Html.ActionLink("View Request", "IndexRequest", "RequestBooks")</li>
+                        <li style="color:burlywood;">@Html.ActionLink("Home", "Index", "AdminDashboard")</li>
+
+
+                        <li> </li>
+                        <li> </li>
+                        <li>
+                        </li>
+                        <li>@Html.ActionLink("Logout", "Login", "Login")</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+    <br />
+
+        <p class="btn btn-success">
+            @Html.ActionLink("Add New User", "CreateUser")
+        </p>
+    <br />
+    <br />
+
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserId)
+
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserRole)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Department)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Year)
+                </th>
+                <th>Action</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserRole)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Department)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Year)
+                    </td>
+                    <td class="btn btn-primary">
+
+                        @Html.ActionLink("Delete", "Delete", new { id = item.UserId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </body>

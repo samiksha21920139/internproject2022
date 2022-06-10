@@ -1,0 +1,103 @@
+﻿@model IEnumerable<College_library_management_system.Models.RequestBook>
+
+@{
+    ViewBag.Title = "IndexRequest";
+}
+
+<style>
+    table, tr, td {
+        background-color: lightgrey;
+        height: 50px;
+        color: black;
+    }
+
+    th {
+        background-color: black;
+        color: white;
+    }
+
+    body {
+        background-image: url("https://jooinn.com/images/old-vintage-book-6.jpg")
+    }
+</style>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar">Logout</span>
+                </button>
+                <h3 style="color:white;">My Books</h3>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="padding-top:10px;">
+                    <li></li>
+                    <li style="color:burlywood;">@Html.ActionLink("Home", "Index", "StudentDashboard")</li>
+                    <li style="color:burlywood;"> @Html.ActionLink("Request Book", "Create", "RequestBooks")</li>
+
+                    <li> </li>
+                    <li> </li>
+                    <li>
+                    </li>
+                    <li>@Html.ActionLink("Logout", "Login", "Login")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <table class="table">
+        
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.BorrowedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RequestId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.BorrowedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReturnDate)
+                </td>
+                <td>  
+                    @Html.ActionLink("Return", "Delete", new { id = item.RequestId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+

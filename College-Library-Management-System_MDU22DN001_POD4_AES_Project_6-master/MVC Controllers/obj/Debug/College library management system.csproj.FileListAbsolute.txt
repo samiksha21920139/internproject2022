@@ -1,0 +1,38 @@
+C:\Users\2071699\source\repos\College library management system\bin\College library management system.dll.config
+C:\Users\2071699\source\repos\College library management system\bin\College library management system.dll
+C:\Users\2071699\source\repos\College library management system\bin\College library management system.pdb
+C:\Users\2071699\source\repos\College library management system\bin\Antlr3.Runtime.dll
+C:\Users\2071699\source\repos\College library management system\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\2071699\source\repos\College library management system\bin\Newtonsoft.Json.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Net.Http.Formatting.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Helpers.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Http.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Http.WebHost.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Mvc.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Optimization.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Razor.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.Deployment.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.dll
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.Razor.dll
+C:\Users\2071699\source\repos\College library management system\bin\WebGrease.dll
+C:\Users\2071699\source\repos\College library management system\bin\Newtonsoft.Json.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Net.Http.Formatting.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Helpers.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Http.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Http.WebHost.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Mvc.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Optimization.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.Razor.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.Deployment.xml
+C:\Users\2071699\source\repos\College library management system\bin\System.Web.WebPages.Razor.xml
+C:\Users\2071699\source\repos\College library management system\bin\Antlr3.Runtime.pdb
+C:\Users\2071699\source\repos\College library management system\obj\Debug\College library management system.csproj.CoreCompileInputs.cache
+C:\Users\2071699\source\repos\College library management system\obj\Debug\College library management system.csproj.CopyComplete
+C:\Users\2071699\source\repos\College library management system\obj\Debug\College library management system.dll
+C:\Users\2071699\source\repos\College library management system\obj\Debug\College library management system.pdb
+C:\Users\2071699\source\repos\College library management system\bin\EntityFramework.dll
+C:\Users\2071699\source\repos\College library management system\bin\EntityFramework.SqlServer.dll
+C:\Users\2071699\source\repos\College library management system\bin\EntityFramework.xml
+C:\Users\2071699\source\repos\College library management system\bin\EntityFramework.SqlServer.xml
+C:\Users\2071699\source\repos\College library management system\obj\Debug\College library management system.csproj.AssemblyReference.cache

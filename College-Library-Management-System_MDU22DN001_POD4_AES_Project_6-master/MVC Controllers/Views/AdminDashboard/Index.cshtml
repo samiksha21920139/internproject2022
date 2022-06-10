@@ -1,0 +1,126 @@
+﻿@model IEnumerable<College_library_management_system.Models.AvailableBook>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    table, tr, td {
+        
+        background-color: lightgrey;
+        height: 50px;
+
+    }
+    th{
+        background-color:black;
+        color:white;
+    }
+    body {
+        background-color: antiquewhite;
+        background-image: url("https://th.bing.com/th/id/R.efd35a6d841953060a0c4b10f763f08c?rik=CJ9NMgFci1tVmg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2ff%2f8%2f4%2f888661-beautiful-library-background-images-1920x1080-iphone.jpg&ehk=4sDpXGMv3dZdR6sK7WCIqhrxrVTpmPIyg8Nr3dm9nl0%3d&risl=&pid=ImgRaw&r=0");
+    }
+    h2{
+        background-color:white;
+        color:black;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body>
+    <br />
+    <br />
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar">Logout</span>
+                </button>
+                <h3 style="color:white;">Library Dashboard</h3>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="padding-top:10px;">
+                    <li></li>
+                    <li style="color:burlywood;">@Html.ActionLink("Add Book", "CreateBooks")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("View Users", "IndexUser", "Users")</li>
+                    <li style="color:burlywood;">@Html.ActionLink("View Requests", "IndexRequest", "RequestBooks")</li>
+
+
+                    <li> </li>
+                    <li> </li>
+                    <li>
+                    </li>
+                    <li>@Html.ActionLink("Logout", "Login", "Login")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+
+    <div ng-app="myApp" ng-controller="namesCtrl">
+        <h2>Search</h2> <p><input type="text" ng-model="test"></p>
+        <table class="table">
+            <tr>
+                <th ng-click="orderByMe('BookId')">
+                    <a href="#">@Html.DisplayNameFor(model => model.BookId)</a>
+                </th>
+                <th ng-click="orderByMe('BookTitle')">
+                    <a href="#">@Html.DisplayNameFor(model => model.BookTitle)</a>
+                </th>
+                <th ng-click="orderByMe('Category')">
+                    <a href="#">@Html.DisplayNameFor(model => model.Category)</a>
+                </th>
+                <th ng-click="orderByMe('Publisher')">
+                    <a href="#">@Html.DisplayNameFor(model => model.Publisher)</a>
+                </th>
+                <th ng-click="orderByMe('Count')">
+                    <a href="#">@Html.DisplayNameFor(model => model.Count)</a>
+                </th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="x in modelVal | orderBy:myOrderBy | filter:test">
+                <td>
+                    {{ x.BookId }}
+                </td>
+                <td>
+                    {{ x.BookTitle }}
+                </td>
+                <td>
+                    {{ x.Category }}
+                </td>
+                <td>
+                    {{x. Publisher }}
+                </td>
+                <td>
+                    {{ x.Count }}
+                </td>
+                <td>
+                   
+                    <a ng-href="@Url.Content("~/AdminDashboard/Delete/"){{x.BookId}}">Delete</a> 
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+
+    @section Scripts {
+        <script type="text/javascript">
+    var app = angular.module('myApp', []);
+    app.controller('namesCtrl', function ($scope) {
+        $scope.modelVal = [];
+    @foreach (var d in Model)
+    {
+        @:$scope.modelVal.push({ BookId: '@d.BookId', BookTitle: '@d.BookTitle', Category: '@d.Category', Publisher: '@d.Publisher', Count: '@d.Count'});
+    }
+
+        $scope.orderByMe = function (x) {
+            $scope.myOrderBy = x;
+        }
+    });
+        </script>
+
+
+    }
+</body>

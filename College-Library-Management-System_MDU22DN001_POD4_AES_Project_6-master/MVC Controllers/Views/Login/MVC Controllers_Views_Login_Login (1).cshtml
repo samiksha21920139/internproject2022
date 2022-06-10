@@ -1,0 +1,130 @@
+﻿@model College_library_management_system.Models.SignIn
+
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <!----MyStyle--
+    <link rel="stylesheet" href="css/MyStyle.css">-->
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="css/SignIn.css">
+    <style>
+        #Role {
+            float: left;
+            position: relative;
+        }
+
+        #rolelabel {
+            padding-right: 40px;
+            font-size: 35px;
+            font-weight: 400;
+            color: #495057;
+            font-family: monospace;
+        }
+        .btn{
+           padding-left:60px;
+        }
+        .btn-primary {
+            background-color: grey;
+        }
+
+        .btn-primary:hover {
+                background-color: black;
+            }
+      
+    
+    <title>LIBRARY_MANAGEMENT_LOG-IN</title>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.skoolbeep.com%2Fblog%2Flibrary-management-system%2F&psig=AOvVaw04-gFUIAah6fW9_7dW90Bp&ust=1654403229478000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNjow7j6kvgCFQAAAAAdAAAAABAD"alt="Image" class="img-fluid">
+                </div>
+                <div class="col-md-6 contents">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="mb-4">
+                                <h3>Login to your Library</h3>
+                                <br />
+                                <br />
+
+                            </div>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <form>
+
+                                    <div class="form-group first">
+                                        <div>
+                                            @Html.LabelFor(model => model.UserName)<br />
+                                            @Html.EditorFor(model => model.UserName)
+                                        </div>
+
+
+                                    </div>
+                                    <div class="form-group last mb-4">
+                                        <div>
+                                            @Html.LabelFor(model => model.Password)<br />
+                                            @Html.EditorFor(model => model.Password)
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group last mb-4">
+                                        <div class="btn">
+                                            <input type="submit" value="Login" class="formButton btn-primary" id="btn-alert" />
+                                            <br />
+                                            <br />
+                                            <h4>New User?</h4>
+                                            @Html.ActionLink("Sign Up", "SignUp")
+
+                                        </div>
+
+                                    </div>
+
+
+                                </form>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.Message");
+                window.location = "Login";
+            };
+        </script>
+    }
+
+</body>
+</html>
+
+
